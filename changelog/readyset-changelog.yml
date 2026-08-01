@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/readysettech/readyset/releases
+scheme: date-based stable tags (stable-YYMMDD)
+current_version: stable-260720
+cadence: roughly monthly stable releases
+entries:
+- version: stable-260720
+  date: '2026-07-21'
+  highlights:
+  - Interactive MySQL client support.
+  - Shallow cache improvements; reduced CPU load by ~75%.
+  - New Prometheus metrics for adaptive caches.
+- version: stable-260630
+  date: '2026-07-01'
+  breaking:
+  - Empty array literals (ARRAY[]) now require explicit type casting.
+  highlights:
+  - TopK query support enabled by default.
+  - Fixed shallow cache coalescence bugs and race conditions.
+- version: stable-260528
+  date: '2026-05-28'
+  highlights:
+  - MCP server support introduced (Readyset AI).
+  - Group commit for PostgreSQL replication.
+  - New UNTIL WRITE cache policy; improved shallow auto-caching.
+- version: stable-260423
+  date: '2026-04-23'
+  highlights:
+  - AVG queries with WHERE IN now cacheable.
+  - MySQL replication batching (~21x improvement); GTID support.
+  - TopK operator fixes.
+- version: stable-260331
+  date: '2026-03-31'
+  breaking:
+  - Shallow caches are now the default; use --cache-mode deep for prior behavior.
+  highlights:
+  - Array overlap operator, virtual Readyset schema, query hints support.
+- version: stable-260226
+  date: '2026-02-26'
+  highlights:
+  - ARM64/aarch64 architecture support.
+  - Shallow cache optimization; PostGIS support enhancements.

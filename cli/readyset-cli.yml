@@ -1,0 +1,59 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://readyset.io/docs/command-reference,
+  https://readyset.io/docs/readyset-ai/rdst
+description: >-
+  Readyset ships two command surfaces: (1) SQL extension commands run against the
+  Readyset adapter over the Postgres/MySQL wire protocol to manage caches, and
+  (2) the rdst diagnostics CLI, a standalone Python tool for query analysis and
+  cache deployment.
+clis:
+- name: rdst
+  full_name: Readyset Diagnostics and SQL Toolkit
+  install:
+  - pip install rdst
+  - uv tool install rdst
+  source: https://github.com/readysettech/readyset/tree/main/readyset-ai/rdst
+  commands:
+  - command: rdst top
+    description: Identify queries consuming the most database time right now.
+  - command: rdst analyze
+    description: End-to-end query analysis with index and rewrite recommendations.
+  - command: rdst ask
+    description: Answer plain-English questions about your data with read-only SQL.
+  - command: rdst scan
+    description: Find and analyze the SQL your application generates.
+  - command: rdst audit
+    description: Generate a comprehensive health report for a single database.
+  - command: rdst fleet audit
+    description: Audit across multiple databases simultaneously.
+  - command: rdst fleet discover
+    description: Auto-discover RDS and Aurora fleets.
+  - command: rdst cache deploy
+    description: Deploy a Readyset cache in front of a database.
+  - command: rdst query cache-compare
+    description: Compare upstream versus cached query performance.
+- name: readyset-sql-commands
+  full_name: Readyset SQL extension commands
+  invoked_via: Postgres/MySQL client connected to the Readyset adapter
+  reference: https://readyset.io/docs/command-reference
+  commands:
+  - command: CREATE CACHE
+    description: Create a cache for a specific SELECT statement.
+  - command: DROP CACHE / DROP ALL CACHES
+    description: Remove one or all cache entries.
+  - command: SHOW CACHES
+    description: List cached queries.
+  - command: SHOW PROXIED QUERIES
+    description: List queries proxied to upstream with cacheability status.
+  - command: SHOW READYSET STATUS
+    description: Current server/replication status.
+  - command: SHOW READYSET VERSION
+    description: Server version and build metadata.
+  - command: EXPLAIN CACHES / EXPLAIN CREATE CACHE
+    description: Inspect and export cache definitions and query interpretation.
+  - command: ALTER READYSET STOP REPLICATION / CHANGE UPSTREAM / SET LOG LEVEL
+    description: Operational controls for replication, upstream, and logging.
+  - command: CREATE/ALTER/DROP MCP TOKEN
+    description: Manage bearer tokens for the Readyset MCP server.

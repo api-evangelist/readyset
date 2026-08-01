@@ -1,0 +1,14 @@
+{
+  "repo": "readyset",
+  "feeds": [
+    {
+      "source": "https://readyset.io/docs/cache/install-rs",
+      "feed_url": "https://readyset.io/docs/cache/install-rs",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-07-25T15:00:33Z"
+}

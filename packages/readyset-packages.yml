@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://github.com/readysettech/readyset,
+  https://readyset.io/docs/cache/install-rs,
+  https://readyset.io/docs/readyset-ai/rdst/getting-started
+note: >-
+  Readyset is a wire-protocol SQL caching proxy for Postgres/MySQL; it exposes no
+  REST API and ships no client SDKs (applications keep using standard Postgres/MySQL
+  drivers). These packages are the distribution/tooling surface: the Readyset engine
+  container, the install script, the readyset-mcp server, and the rdst diagnostics CLI.
+packages:
+- language: any
+  registry: docker-hub
+  name: readysettech/readyset
+  url: https://hub.docker.com/r/readysettech/readyset
+  install: docker pull readysettech/readyset
+  official: true
+  kind: server-image
+  description: The Readyset caching engine container (also distributed as Linux binaries).
+- language: shell
+  registry: script
+  name: readyset-launch
+  url: https://launch.readyset.io
+  install: bash -c "$(curl -sSL https://launch.readyset.io)"
+  official: true
+  kind: installer
+  description: One-line install script for Readyset.
+- language: python
+  registry: pypi
+  name: rdst
+  url: https://pypi.org/project/rdst/
+  install: pip install rdst
+  official: true
+  kind: cli
+  description: Readyset Diagnostics and SQL Toolkit (rdst) CLI for Postgres/MySQL.
+- language: rust
+  registry: source
+  name: readyset-mcp
+  url: https://github.com/readysettech/readyset/tree/main/readyset-mcp
+  install: cargo build --release -p readyset-mcp
+  official: true
+  kind: mcp-server
+  description: Stdio MCP server binary built from the Readyset repository.

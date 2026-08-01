@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: generated
+source: grounded in mcp/readyset-mcp.yml (official Readyset MCP tools)
+note: >-
+  Readyset exposes no REST/OpenAPI surface; this skill is grounded in the real,
+  documented Readyset MCP tool names rather than OpenAPI operationIds.
+skills:
+- file: readyset-cache-a-slow-query.md
+  name: Cache a slow query with Readyset
+  api: mcp/readyset-mcp.yml
+  operations:
+  - readyset_status
+  - show_proxied_queries
+  - show_proxied_supported
+  - explain_cache_support
+  - create_cache
+  - show_caches

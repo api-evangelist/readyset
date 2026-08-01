@@ -1,0 +1,29 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://github.com/readysettech/readyset/releases,
+  https://github.com/readysettech/readyset (LICENSE)
+versioning:
+  scheme: date-based stable tags (stable-YYMMDD)
+  current: stable-260720
+  docs: https://github.com/readysettech/readyset/releases
+license:
+  spdx: BUSL-1.1
+  note: Business Source License 1.1, converts to Apache 2.0 after 4 years; free to
+    use on unlimited nodes.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation-policy page found. Breaking changes are called out per
+    release in the GitHub release notes (e.g. shallow-caches-as-default in stable-260331,
+    ARRAY[] casting in stable-260630).
+breaking_changes:
+- release: stable-260331
+  change: Shallow caches became the default (--cache-mode deep restores prior behavior).
+- release: stable-260630
+  change: Empty array literals (ARRAY[]) now require explicit type casting.
+status_page: null
+status_page_note: No status.readyset.io status page found (404 as of 2026-07-20).
+sla:
+  url: null
+  note: Readyset Cloud advertises high availability; no public SLA document located.

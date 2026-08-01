@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of /.well-known/* on readyset.io and readyset.cloud
+hosts:
+- host: https://readyset.io
+  documents:
+  - path: /.well-known/api-catalog
+    status: 200
+    file: readyset-api-catalog.json
+    format: application/linkset+json
+    note: RFC 9727 API catalog linkset; links to /docs and /llms.txt
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://readyset.cloud
+  documents:
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

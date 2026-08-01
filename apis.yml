@@ -1,8 +1,27 @@
 aid: readyset
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/readyset.png
 name: ReadySet
-description: 'ReadySet is a company surfaced as a portfolio company of amplify-partners, index-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: developer-tools. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: >-
+  Readyset is a realtime SQL caching engine for Postgres and MySQL. It sits between
+  applications and the database as a wire-compatible proxy, automatically caching the
+  results of costly SELECT queries and keeping them up to date from the database
+  replication stream with no application code changes or manual invalidation. Written
+  in Rust and available as open source (BSL 1.1), a self-managed Private deployment,
+  and a fully managed Readyset Cloud offering on AWS, it also ships Readyset AI — an
+  MCP server plus the rdst diagnostics CLI — so AI assistants and developers can
+  inspect caches, analyze slow queries, and deploy caches directly. Backed by Amplify
+  Partners and Index Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/readyset/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,10 +32,17 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Developer Tools
+- Database
+- Caching
+- SQL
+- PostgreSQL
+- MySQL
+- Performance
+- MCP
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -26,3 +52,53 @@ maintainers:
 common:
 - type: Website
   url: https://readyset.io
+- type: Documentation
+  url: https://readyset.io/docs
+- type: GettingStarted
+  url: https://readyset.io/docs/cache/install-rs
+- type: Blog
+  url: https://readyset.io/blog
+- type: Pricing
+  url: https://readyset.io/pricing
+- type: SignUp
+  url: https://readyset.cloud
+- type: GitHubOrganization
+  url: https://github.com/readysettech
+- type: Support
+  url: https://github.com/readysettech/readyset/issues
+- type: PrivacyPolicy
+  url: https://readyset.io/privacy-policy
+- type: ChangeLog
+  name: Readyset releases
+  url: https://github.com/readysettech/readyset/releases
+- type: MCPServer
+  name: Readyset MCP server (Readyset AI)
+  url: mcp/readyset-mcp.yml
+- type: CLI
+  name: rdst CLI + Readyset SQL command reference
+  url: cli/readyset-cli.yml
+- type: Packages
+  name: Readyset distribution and tooling packages
+  url: packages/readyset-packages.yml
+- type: LLMsTxt
+  url: llms/readyset-llms.txt
+- type: WellKnown
+  url: well-known/readyset-well-known.yml
+- type: APICatalog
+  name: RFC 9727 api-catalog linkset
+  url: well-known/readyset-api-catalog.json
+- type: ChangeLog
+  name: Readyset changelog (structured)
+  url: changelog/readyset-changelog.yml
+- type: Lifecycle
+  url: lifecycle/readyset-lifecycle.yml
+- type: DomainSecurity
+  url: security/readyset-domain-security.yml
+- type: AgentSkill
+  name: Readyset agent skills
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1
