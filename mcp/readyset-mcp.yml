@@ -2,34 +2,32 @@ generated: '2026-07-20'
 method: searched
 status: published
 source: https://readyset.io/docs/readyset-ai/mcp-server
-description: >-
-  Official Readyset MCP server ("Readyset AI"). Exposes a running Readyset
-  caching engine over the Model Context Protocol so AI assistants can inspect
-  caches, query performance, and replication health, and create or drop caches.
-  Introduced in Readyset stable-260528 (May 2026).
+description: Official Readyset MCP server ("Readyset AI"). Exposes a running Readyset caching engine over
+  the Model Context Protocol so AI assistants can inspect caches, query performance, and replication health,
+  and create or drop caches. Introduced in Readyset stable-260528 (May 2026).
 server:
   name: readyset
   transports:
   - transport: stdio
     binary: readyset-mcp
     build: cargo build --release -p readyset-mcp
-    note: Local development; spawned as a child process of the MCP client. Configured
-      via READYSET_HOST/PORT/USER/PASSWORD/DB_TYPE env vars.
+    note: Local development; spawned as a child process of the MCP client. Configured via READYSET_HOST/PORT/USER/PASSWORD/DB_TYPE
+      env vars.
   - transport: http
     embedded_in: readyset
     enable: --enable-mcp --mcp-address 127.0.0.1:6035
     path: /mcp
-    note: Embedded HTTP endpoint hosted inside the readyset binary; supports remote/shared
-      access. Register with 'claude mcp add --transport http readyset https://HOST:6035/mcp'.
+    note: Embedded HTTP endpoint hosted inside the readyset binary; supports remote/shared access. Register
+      with 'claude mcp add --transport http readyset https://HOST:6035/mcp'.
 authentication:
   scheme: bearer
   token_prefix: rs_mcp_
   management: SQL commands on the Readyset adapter
   commands:
-    create: "CREATE MCP TOKEN 'name' WITH SCOPE cache_admin EXPIRES '2027-01-01T00:00:00Z';"
+    create: CREATE MCP TOKEN 'name' WITH SCOPE cache_admin EXPIRES '2027-01-01T00:00:00Z';
     list: SHOW MCP TOKENS;
-    alter: "ALTER MCP TOKEN 'name' SET EXPIRES '...';"
-    drop: "DROP MCP TOKEN 'name';"
+    alter: ALTER MCP TOKEN 'name' SET EXPIRES '...';
+    drop: DROP MCP TOKEN 'name';
   scopes:
   - name: read_only
     description: Inspection tools only.
@@ -62,3 +60,12 @@ tools:
 - name: drop_cache
   description: Remove an existing cache.
   scope: cache_admin
+deployment:
+  mode: none
+  endpoint: https://HOST:6035/mcp
+  verified: probed
+  probe: dead
+  note: the endpoint this manifest claimed did not answer; recorded as none rather than deleted so the
+    claim stays auditable
+  checked: '2026-08-12'
+  source: catalog MCP census
