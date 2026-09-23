@@ -1,0 +1,27 @@
+# Front Door AI Index — readyset — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: readyset
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: readyset.io
+  final_host: readyset.io
+  ownership: own
+  owner: readyset
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 6
+  host_score: 6
+  density: 14.02
+  words: 428
+  tiers:
+    agentic: 2
+    core: 4
+    model: 0
+  ambiguous: 1
+  top_terms:
+    AI: 4
+    agentic: 2
+    intelligence: 1
