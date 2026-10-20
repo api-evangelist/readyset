@@ -16,8 +16,8 @@ edges:
   listing_count: 4
   apps:
   - Readyset Cloud - Extra Small
-  - Readyset Cloud - Large
   - Readyset Cloud - Small
+  - Readyset Cloud - Large
   - Readyset Cloud - Medium
   seller_name: Readyset
   detected_by: sweep-cloud-marketplaces.py
